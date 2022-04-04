@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 	<div class="container">
 
-		<form class="well form-horizontal" action=" " method="post" id="contact_form">
+		<form class="well form-horizontal" action="<?= base_url('form/send') ?>" method="post" id="contact_form">
 			<fieldset>
 
 				<!-- Form Name -->
@@ -30,7 +30,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input name="first_name" placeholder="First Name" class="form-control" type="text">
+							<input name="name" placeholder="First Name" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -42,7 +42,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input name="last_name" placeholder="Last Name" class="form-control" type="text">
+							<input name="surname" placeholder="Last Name" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -178,7 +178,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-							<input name="website" placeholder="Website or domain name" class="form-control" type="text">
+							<input name="domain" placeholder="Website or domain name" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -189,12 +189,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-md-4">
 						<div class="radio">
 							<label>
-								<input type="radio" name="hosting" value="yes" /> Yes
+								<input type="radio" name="choice" value="yes" /> Yes
 							</label>
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="hosting" value="no" /> No
+								<input type="radio" name="choice" value="no" /> No
 							</label>
 						</div>
 					</div>
@@ -207,13 +207,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-							<textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+							<textarea class="form-control" name="description" placeholder="Project Description"></textarea>
 						</div>
 					</div>
 				</div>
 
-				<!-- Success message -->
-				<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+				<?php if ($this->session->flashdata('success')) : ?>
+					<!-- Success message -->
+					<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+				<?php endif; ?>
 
 				<!-- Button -->
 				<div class="form-group">
