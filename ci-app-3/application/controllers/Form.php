@@ -22,7 +22,7 @@ class Form extends CI_Controller
 			'user_surname' => $this->input->post('surname'),
 			'user_email' => $this->input->post('email'),
 			'user_phone' => $this->input->post('phone'),
-			'user_adress' => $this->input->post('adress'),
+			'user_adress' => $this->input->post('address'),
 			'user_city' => $this->input->post('city'),
 			'user_state' => $this->input->post('state'),
 			'user_zip' => $this->input->post('zip'),
