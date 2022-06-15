@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
-<head>
-    <?php $this->load->view("includes/header"); ?>
-</head>
+<!-- Header -->
+<?php $this->load->view("includes/header"); ?>
+<!-- /.Header -->
 
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
@@ -11,13 +11,11 @@
 
         <!-- Navbar -->
         <?php $this->load->view("includes/navbar"); ?>
-        <!-- Navbar -->
-
+        <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
         <?php $this->load->view("includes/aside"); ?>
         <!-- Main Sidebar Container -->
-
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -71,18 +69,16 @@
         </div>
         <!-- /.content-wrapper -->
 
-        <!-- Footer -->
         <?php $this->load->view("includes/footer"); ?>
-        <!-- Footer -->
-
 
 
     </div>
     <!-- ./wrapper -->
 
-    <!-- JS -->
+    <!-- Scripts -->
     <?php $this->load->view("includes/scripts"); ?>
-    <!-- JS -->
+    <!-- Scripts -->
+
 </body>
 
 </html>
